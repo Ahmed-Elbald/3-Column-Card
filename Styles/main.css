@@ -1,0 +1,109 @@
+/* Global */
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+i,
+button,
+input[type=submit] {
+  cursor: pointer;
+}
+
+/* Styling */
+body {
+  height: 150vh;
+}
+
+/* font-family: 'Lexend Deca', sans-serif; */
+.parent {
+  width: 375px;
+  background-color: white;
+  padding: 3em 1em;
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+@media (min-width: 800px) {
+  .parent {
+    width: 800px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.parent .cards {
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (min-width: 800px) {
+  .parent .cards {
+    display: flex;
+    max-width: 780px;
+  }
+}
+.parent .cards .card-1 {
+  background-color: #e38826;
+}
+.parent .cards .card-1 button {
+  color: #e38826;
+}
+.parent .cards .card-2 {
+  background-color: #006970;
+}
+.parent .cards .card-2 button {
+  color: #006970;
+}
+.parent .cards .card-3 {
+  background-color: #004241;
+}
+.parent .cards .card-3 button {
+  color: #004241;
+}
+.parent .cards [class|=card] {
+  padding: 2em 1.5em;
+}
+.parent .cards [class|=card] img {
+  width: 50px;
+}
+.parent .cards [class|=card] .details {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 2em;
+}
+.parent .cards [class|=card] .details h1 {
+  color: #f2f2f2;
+  font-family: "Big Shoulders Display", cursive;
+  transform: scaleY(1.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.parent .cards [class|=card] .details p {
+  color: rgba(255, 255, 255, 0.51);
+  font-size: 15px;
+}
+.parent .cards [class|=card] button {
+  background-color: #f2f2f2;
+  border-radius: 100vh;
+  padding: 1em 2em;
+  width: max-content;
+  letter-spacing: 2px;
+  margin-top: 2em;
+}
+@media (min-width: 800px) {
+  .parent .cards [class|=card] button {
+    margin-top: 5em;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

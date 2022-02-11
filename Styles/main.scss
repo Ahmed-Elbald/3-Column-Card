@@ -1,0 +1,80 @@
+// Imprted files
+
+@use "../Styles/GMVL.scss" as *;
+
+/* Styling */
+
+body {
+  height: 150vh;
+}
+/* font-family: 'Lexend Deca', sans-serif; */
+// font-family: 'Big Shoulders Display', cursive;
+.parent {
+  width: 375px;
+  background-color: white;
+  padding: 3em 1em;
+  @include position-centering;
+  @include min-mq(800px) {
+    width: 800px;
+    height: 100vh;
+    @include flex-centering;
+  }
+  .cards {
+    border-radius: 10px;
+    overflow: hidden;
+    @include min-mq(800px) {
+      display: flex;
+      max-width: 260px * 3;
+    }
+    .card-1 {
+      background-color: $main-sedans;
+      button {
+        color: $main-sedans;
+      }
+    }
+    .card-2 {
+      background-color: $main-suvs;
+      button {
+        color: $main-suvs;
+      }
+    }
+    .card-3 {
+      background-color: $main-luxury;
+      button {
+        color: $main-luxury;
+      }
+    }
+    [class|="card"] {
+      padding: 2em 1.5em;
+      img {
+        width: 50px;
+      }
+      .details {
+        @include flex-column-gap(2em);
+        margin-top: 2em;
+        h1 {
+          color: $header-button-bg;
+          font-family: "Big Shoulders Display", cursive;
+          transform: scaleY(1.2);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+        p {
+          color: $paragraph;
+          font-size: 15px;
+        }
+      }
+      button {
+        background-color: $header-button-bg;
+        border-radius: 100vh;
+        padding: 1em 2em;
+        width: max-content;
+        letter-spacing: 2px;
+        margin-top: 2em;
+        @include min-mq(800px) {
+          margin-top: 5em;
+        }
+      }
+    }
+  }
+}
