@@ -21,6 +21,11 @@ input[type=submit] {
 body {
   height: 150vh;
 }
+@media (min-width: 800px) {
+  body {
+    height: 100vh;
+  }
+}
 
 /* font-family: 'Lexend Deca', sans-serif; */
 .parent {
@@ -99,11 +104,17 @@ body {
   width: max-content;
   letter-spacing: 2px;
   margin-top: 2em;
+  transition-duration: 0.5s;
 }
 @media (min-width: 800px) {
   .parent .cards [class|=card] button {
     margin-top: 5em;
   }
+}
+.parent .cards [class|=card] button:hover {
+  background-color: transparent;
+  outline: 1px solid white;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

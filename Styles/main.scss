@@ -6,6 +6,9 @@
 
 body {
   height: 150vh;
+  @include min-mq(800px) {
+    height: 100vh;
+  }
 }
 /* font-family: 'Lexend Deca', sans-serif; */
 // font-family: 'Big Shoulders Display', cursive;
@@ -71,8 +74,14 @@ body {
         width: max-content;
         letter-spacing: 2px;
         margin-top: 2em;
+        transition-duration: .5s;
         @include min-mq(800px) {
           margin-top: 5em;
+        }
+        &:hover {
+          background-color: transparent;
+          outline: 1px solid white;
+          color: white;
         }
       }
     }
