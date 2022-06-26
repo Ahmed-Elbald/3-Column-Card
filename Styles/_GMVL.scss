@@ -9,14 +9,17 @@
   border: none;
   outline: none;
   box-sizing: border-box;
-  text-decoration: none;
-  text-transform: capitalize;
-  font-family: 'Lexend Deca', sans-serif;
 }
+
 i,
 button,
-input[type="submit"] {
+input[type="submit"],
+a {
   cursor: pointer;
+
+  &:focus-visible {
+    box-shadow: 0 0 20px rgb(218, 73, 73);
+  }
 }
 
 // Variables
@@ -65,7 +68,7 @@ $header-button-bg: hsl(0, 0%, 95%);
   height: $diameter;
 }
 
-@mixin flex-layout($dir, $justify, $align-item,$align-cont,$wrap) {
+@mixin flex-layout($dir, $justify, $align-item, $align-cont, $wrap) {
   display: flex;
   flex-direction: $dir;
   justify-content: $justify;
@@ -74,14 +77,14 @@ $header-button-bg: hsl(0, 0%, 95%);
   align-content: $align-cont;
 }
 
-@mixin grid-layout($rows,$columns,$gap) {
+@mixin grid-layout($rows, $columns, $gap) {
   display: grid;
   grid-template-rows: $rows;
   grid-template-columns: $columns;
   gap: $gap;
 }
 
-@mixin flex-row-gap($gap,$justify) {
+@mixin flex-row-gap($gap, $justify) {
   display: flex;
   flex-wrap: wrap;
   gap: $gap;
@@ -105,29 +108,35 @@ $header-button-bg: hsl(0, 0%, 95%);
     @content;
   }
 }
+
 @mixin max-mq($size) {
   @media (max-width: $size) {
     @content;
   }
 }
-@mixin minmax-mq($min-size,$max-size) {
+
+@mixin minmax-mq($min-size, $max-size) {
   @media (min-width: $min-size) and (max-width: $max-size) {
     @content;
   }
 }
 
-@mixin triangle($size,$color,$direction) {
+@mixin triangle($size, $color, $direction) {
   border: $size solid transparent;
-  @if $direction == "top" {
+
+  @if $direction =="top" {
     border-bottom-color: $color;
   }
-  @else if $direction == "bottom" {
+
+  @else if $direction =="bottom" {
     border-top-color: $color;
   }
-  @else if $direction == "right" {
+
+  @else if $direction =="right" {
     border-left-color: $color;
   }
-  @else if $direction == "left" {
+
+  @else if $direction =="left" {
     border-right-color: $color;
   }
 }

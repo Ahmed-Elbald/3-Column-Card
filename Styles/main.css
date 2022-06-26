@@ -6,44 +6,41 @@
   border: none;
   outline: none;
   box-sizing: border-box;
-  text-decoration: none;
-  text-transform: capitalize;
-  font-family: "Lexend Deca", sans-serif;
 }
 
 i,
 button,
-input[type=submit] {
+input[type=submit],
+a {
   cursor: pointer;
+}
+i:focus-visible,
+button:focus-visible,
+input[type=submit]:focus-visible,
+a:focus-visible {
+  box-shadow: 0 0 20px #da4949;
 }
 
 /* Styling */
 body {
-  height: 150vh;
-}
-@media (min-width: 800px) {
-  body {
-    height: 100vh;
-  }
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: "Lexend Deca", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5em 0;
 }
 
-/* font-family: 'Lexend Deca', sans-serif; */
 .parent {
   width: 375px;
   background-color: white;
   padding: 3em 1em;
-  position: absolute;
-  bottom: 50%;
-  right: 50%;
-  transform: translate(50%, 50%);
 }
 @media (min-width: 800px) {
   .parent {
-    width: 800px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 900px;
   }
 }
 .parent .cards {
@@ -53,29 +50,28 @@ body {
 @media (min-width: 800px) {
   .parent .cards {
     display: flex;
-    max-width: 780px;
   }
 }
 .parent .cards .card-1 {
   background-color: #e38826;
 }
-.parent .cards .card-1 button {
+.parent .cards .card-1 a {
   color: #e38826;
 }
 .parent .cards .card-2 {
   background-color: #006970;
 }
-.parent .cards .card-2 button {
+.parent .cards .card-2 a {
   color: #006970;
 }
 .parent .cards .card-3 {
   background-color: #004241;
 }
-.parent .cards .card-3 button {
+.parent .cards .card-3 a {
   color: #004241;
 }
 .parent .cards [class|=card] {
-  padding: 2em 1.5em;
+  padding: 3em 2em;
 }
 .parent .cards [class|=card] img {
   width: 50px;
@@ -86,32 +82,36 @@ body {
   gap: 2em;
   margin-top: 2em;
 }
-.parent .cards [class|=card] .details h1 {
+.parent .cards [class|=card] .details span {
   color: #f2f2f2;
   font-family: "Big Shoulders Display", cursive;
   transform: scaleY(1.2);
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 1.7rem;
 }
 .parent .cards [class|=card] .details p {
   color: rgba(255, 255, 255, 0.51);
   font-size: 15px;
+  line-height: 30px;
 }
-.parent .cards [class|=card] button {
+.parent .cards [class|=card] a {
   background-color: #f2f2f2;
   border-radius: 100vh;
   padding: 1em 2em;
   width: max-content;
   letter-spacing: 2px;
   margin-top: 2em;
+  text-decoration: none;
+  display: block;
   transition-duration: 0.5s;
 }
 @media (min-width: 800px) {
-  .parent .cards [class|=card] button {
-    margin-top: 5em;
+  .parent .cards [class|=card] a {
+    margin-top: 4em;
   }
 }
-.parent .cards [class|=card] button:hover {
+.parent .cards [class|=card] a:hover {
   background-color: transparent;
   outline: 1px solid white;
   color: white;
