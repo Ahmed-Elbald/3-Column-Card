@@ -30,78 +30,72 @@ body {
       display: flex;
     }
 
-    .card-1 {
-      background-color: $main-sedans;
+    $colors: (
+      "1": $main-sedans,
+      "2": $main-suvs,
+      "3": $main-luxury
+    );
+
+  @each $i,
+  $color in $colors {
+    .card-#{$i} {
+      background-color: $color;
 
       a {
-        color: $main-sedans;
-      }
-    }
-
-    .card-2 {
-      background-color: $main-suvs;
-
-      a {
-        color: $main-suvs;
-      }
-    }
-
-    .card-3 {
-      background-color: $main-luxury;
-
-      a {
-        color: $main-luxury;
-      }
-    }
-
-    [class|="card"] {
-      padding: 3em 2em;
-
-      img {
-        width: 50px;
-      }
-
-      .details {
-        @include flex-column-gap(2em);
-        margin-top: 2em;
-
-        span {
-          color: $header-button-bg;
-          font-family: "Big Shoulders Display", cursive;
-          transform: scaleY(1.2);
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          font-size: 1.7rem;
-        }
-
-        p {
-          color: $paragraph;
-          font-size: 15px;
-          line-height: 30px;
-        }
-      }
-
-      a {
-        background-color: $header-button-bg;
-        border-radius: 100vh;
-        padding: 1em 2em;
-        width: max-content;
-        letter-spacing: 2px;
-        margin-top: 2em;
-        text-decoration: none;
-        display: block;
-        transition-duration: .5s;
-
-        @include min-mq(800px) {
-          margin-top: 4em;
-        }
-
-        &:hover {
-          background-color: transparent;
-          outline: 1px solid white;
-          color: white;
-        }
+        color: $color;
       }
     }
   }
+
+
+  [class|="card"] {
+    padding: 3em 2em;
+
+    img {
+      width: 50px;
+    }
+
+    .details {
+      @include flex-column-gap(2em);
+      margin-top: 2em;
+
+      span {
+        color: $header-button-bg;
+        font-family: "Big Shoulders Display", cursive;
+        transform: scaleY(1.2);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 1.7rem;
+      }
+
+      p {
+        color: $paragraph;
+        font-size: 15px;
+        line-height: 30px;
+      }
+    }
+
+    a {
+      background-color: $header-button-bg;
+      border-radius: 100vh;
+      padding: 1em 2em;
+      width: max-content;
+      letter-spacing: 2px;
+      margin-top: 2em;
+      text-decoration: none;
+      display: block;
+      transition-duration: .5s;
+
+      @include min-mq(800px) {
+        margin-top: 4em;
+      }
+
+      &:hover {
+        background-color: transparent;
+        outline: 1px solid white;
+        color: white;
+      }
+    }
+  }
+}
 }
