@@ -82,7 +82,7 @@ body {
   gap: 2em;
   margin-top: 2em;
 }
-.parent .cards [class|=card] .details span {
+.parent .cards [class|=card] .details h1 {
   color: #f2f2f2;
   font-family: "Big Shoulders Display", cursive;
   transform: scaleY(1.2);
